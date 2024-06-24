@@ -14,12 +14,12 @@ Technology
 - MediatR
 - EFCore
 
-  Design Pattern
-  - Clean Architecture
-  - Factory
-  - Repository
-  - REPR
-  - MediatR
-  - CQRS
+Design Pattern
+- Clean Architecture
+- Factory
+- Repository
+- REPR
+- MediatR
+- CQRS
 
 
