@@ -1,5 +1,5 @@
 # Library Management API
-Using Clean Architecture with a glimpse of Vertical Slice for use case structuring.
+Using Clean Architecture with a glimpse of Vertical Slice for use case structuring with in-memory database.
 
 Consist of 4 Projects
  - LibraryManagement.API --> Handles web api endpoints and building the project configurations.
@@ -22,4 +22,6 @@ Design Pattern
 - MediatR
 - CQRS
 
+How to run
+- Clone, build and run the project
 
