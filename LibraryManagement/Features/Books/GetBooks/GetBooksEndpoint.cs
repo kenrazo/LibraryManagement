@@ -6,7 +6,8 @@ namespace LibraryManagement.API.Features.Books.GetBooks
     public static class GetBooksEndpoint
     {
         public static void MapGetBookEndpoint(this IEndpointRouteBuilder builder)
-            => builder.MapGet("books", Get);
+            => builder.MapGet("books", Get)
+            .Produces<IEnumerable<GetBooksResponse>>(StatusCodes.Status200OK);
 
         private static async Task<IResult> Get(IMediator mediator)
         {

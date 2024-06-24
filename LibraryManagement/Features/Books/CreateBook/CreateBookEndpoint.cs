@@ -1,12 +1,15 @@
 ﻿using LibraryManagement.Application.Book.Commands.CreateBook;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagement.API.Features.Books.CreateBook
 {
     public static class CreateBookEndpoint
     {
         public static void MapCreateBookEndpoint(this IEndpointRouteBuilder builder)
-            => builder.MapPost("books", CreateBook);
+            => builder.MapPost("books", CreateBook)
+                .Produces<CreateBookResponse>(StatusCodes.Status200OK)
+                .Produces<ProblemDetails>(StatusCodes.Status400BadRequest);
 
         public static async Task<IResult> CreateBook(IMediator mediator, CreateBookCommand command)
         {

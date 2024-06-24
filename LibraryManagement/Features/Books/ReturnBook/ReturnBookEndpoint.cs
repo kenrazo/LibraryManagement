@@ -1,5 +1,4 @@
-﻿
-using LibraryManagement.Application.Book.Commands.ReturnBook;
+﻿using LibraryManagement.Application.Book.Commands.ReturnBook;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,7 +7,9 @@ namespace LibraryManagement.API.Features.Books.ReturnBook
     public static class ReturnBookEndpoint
     {
         public static void MapReturnBookEndpoint(this IEndpointRouteBuilder builder)
-            => builder.MapPut("books/{id}/return", ReturnBook);
+            => builder.MapPut("books/{id}/return", ReturnBook)
+                .Produces<ReturnBookResponse>(StatusCodes.Status200OK)
+                .Produces<ProblemDetails>(StatusCodes.Status400BadRequest);
 
         private static async Task<IResult> ReturnBook(IMediator mediator, int id)
         {

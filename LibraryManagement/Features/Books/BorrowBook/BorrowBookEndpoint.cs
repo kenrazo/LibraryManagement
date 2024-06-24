@@ -8,7 +8,9 @@ namespace LibraryManagement.API.Features.Books.BorrowBook
     public static class BorrowBookEndpoint
     {
         public static void MapBorrowBookEndpoint(this IEndpointRouteBuilder builder)
-            => builder.MapPut("books/{id}/borrow", BorrowBook);
+            => builder.MapPut("books/{id}/borrow", BorrowBook)
+                .Produces<BorrowBookResponse>(StatusCodes.Status200OK)
+                .Produces<ProblemDetails>(StatusCodes.Status400BadRequest);
 
         private static async Task<IResult> BorrowBook(IMediator mediator, int id)
         {
