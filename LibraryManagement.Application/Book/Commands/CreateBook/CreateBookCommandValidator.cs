@@ -12,8 +12,6 @@ namespace LibraryManagement.Application.Book.Commands.CreateBook
                 .MaximumLength(150);
 
             RuleFor(m => m.ISBN)
-                .NotNull()
-                .NotEmpty()
                 .MaximumLength(150);
 
             RuleFor(m => m.Author)

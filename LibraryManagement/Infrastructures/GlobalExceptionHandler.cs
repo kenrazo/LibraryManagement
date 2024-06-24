@@ -6,6 +6,7 @@ namespace LibraryManagement.API.Infrastructures
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {
+        private const string EXCEPTION_DETAIL = "One or more validation errors has occurred";
         private readonly ILogger<GlobalExceptionHandler> _logger;
 
         public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
@@ -47,8 +48,20 @@ namespace LibraryManagement.API.Infrastructures
                     StatusCodes.Status400BadRequest,
                     "ValidationFailure",
                     "Validation error",
-                    "One or more validation errors has occurred",
+                    EXCEPTION_DETAIL,
                     validationException.Errors),
+                BookIsAlreadyBorrowedException isAlreadyBorrowedException => new ExceptionDetails(
+                    StatusCodes.Status400BadRequest,
+                    "ValidationFailure",
+                    "Validation Error",
+                    EXCEPTION_DETAIL,
+                    isAlreadyBorrowedException.Errors),
+                BookIsAlreadyReturnedException isAlreadyBorrowedException => new ExceptionDetails(
+                    StatusCodes.Status400BadRequest,
+                    "ValidationFailure",
+                    "Validation Error",
+                    EXCEPTION_DETAIL,
+                    isAlreadyBorrowedException.Errors),
                 _ => new ExceptionDetails(
                     StatusCodes.Status500InternalServerError,
                     "ServerError",

@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34601.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.API", "LibraryManagement\LibraryManagement.API.csproj", "{A705805E-2A2E-42E2-9807-56AA1235286F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.API", "LibraryManagement\LibraryManagement.API.csproj", "{A705805E-2A2E-42E2-9807-56AA1235286F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Domain", "LibraryManagement.Domain\LibraryManagement.Domain.csproj", "{8B40C3B5-7233-4068-95DF-A1979E71E964}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Domain", "LibraryManagement.Domain\LibraryManagement.Domain.csproj", "{8B40C3B5-7233-4068-95DF-A1979E71E964}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Infrastructure.EFCore", "LibraryManagement.Infrastructure.EFCore\LibraryManagement.Infrastructure.EFCore.csproj", "{4C81DA70-CC30-446B-8EC2-70A15E9F1F2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Infrastructure.EFCore", "LibraryManagement.Infrastructure.EFCore\LibraryManagement.Infrastructure.EFCore.csproj", "{4C81DA70-CC30-446B-8EC2-70A15E9F1F2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Application", "LibraryManagement.Application\LibraryManagement.Application.csproj", "{04854351-D1B3-4253-B6F1-82AFD6E4594C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Application", "LibraryManagement.Application\LibraryManagement.Application.csproj", "{04854351-D1B3-4253-B6F1-82AFD6E4594C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E8758137-299A-48ED-88B1-2BE65691FD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Domain.Tests", "LibraryManagement.Domain.Tests\LibraryManagement.Domain.Tests.csproj", "{5861389E-B074-4037-99EF-D9E79CF16082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{04854351-D1B3-4253-B6F1-82AFD6E4594C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04854351-D1B3-4253-B6F1-82AFD6E4594C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04854351-D1B3-4253-B6F1-82AFD6E4594C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5861389E-B074-4037-99EF-D9E79CF16082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5861389E-B074-4037-99EF-D9E79CF16082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5861389E-B074-4037-99EF-D9E79CF16082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5861389E-B074-4037-99EF-D9E79CF16082}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5861389E-B074-4037-99EF-D9E79CF16082} = {E8758137-299A-48ED-88B1-2BE65691FD33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D05C83C0-84C8-44C7-B43C-AE8F985EC6E1}

@@ -1,5 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 using LibraryManagement.Domain.Abstractions;
+using LibraryManagement.Domain.Exceptions;
 namespace LibraryManagement.Domain.Books
 {
     public class Book
@@ -35,27 +36,46 @@ namespace LibraryManagement.Domain.Books
         }
 
         // Method to mark the book as borrowed
-        public Result MarkAsBorrowed()
+        public void BarrowBook()
         {
             if (IsBorrowed)
             {
-                return Result.Failure(BookErrors.BookIsAlreadyBarrowed(Title));
+                ThrowBookIsAlreadyBorrowedException();
+                return;
             }
 
             IsBorrowed = true;
-            return Result.Success();
         }
 
         // Method to mark the book as returned
-        public Result MarkAsReturned()
+        public void ReturnBook()
         {
             if (!IsBorrowed)
             {
-                return Result.Failure(BookErrors.BookIsAlreadyReturned(Title));
+                ThrowBookIsAlreadyReturnedException();
             }
 
             IsBorrowed = false;
-            return Result.Success();
+        }
+
+        private void ThrowBookIsAlreadyBorrowedException()
+        {
+            List<ValidationError> errors = new()
+                {
+                    new ValidationError(string.Empty,
+                        $"The book with Title: {Title} is already barrowed.")
+                };
+            throw new BookIsAlreadyBorrowedException(errors);
+        }
+
+        private void ThrowBookIsAlreadyReturnedException()
+        {
+            List<ValidationError> errors = new()
+                {
+                    new ValidationError(string.Empty,
+                        $"The book with Title: {Title} is already returned.")
+                };
+            throw new BookIsAlreadyReturnedException(errors);
         }
     }
 

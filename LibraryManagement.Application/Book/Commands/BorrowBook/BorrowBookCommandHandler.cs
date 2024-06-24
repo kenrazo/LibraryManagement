@@ -26,12 +26,7 @@ namespace LibraryManagement.Application.Book.Commands.BorrowBook
                 return (Result.Failure<BorrowBookResponse>(BookErrors.BookNotFound(request.Id)));
             }
 
-            var result = book.MarkAsBorrowed();
-
-            if (result.IsFailure)
-            {
-                return Result.Failure<BorrowBookResponse>(result.Error);
-            }
+            book.BarrowBook();
 
             var borrowedBook = await _bookRepository.UpdateAsync(book);
 

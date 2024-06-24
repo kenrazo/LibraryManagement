@@ -25,12 +25,7 @@ namespace LibraryManagement.Application.Book.Commands.ReturnBook
                 return (Result.Failure<ReturnBookResponse>(BookErrors.BookNotFound(request.Id)));
             }
 
-            var result = book.MarkAsReturned();
-
-            if (result.IsFailure)
-            {
-                return Result.Failure<ReturnBookResponse>(result.Error);
-            }
+            book.ReturnBook();
 
             var returnedBook = await _bookRepository.UpdateAsync(book);
 
