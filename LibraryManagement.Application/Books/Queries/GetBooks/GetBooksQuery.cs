@@ -1,6 +1,6 @@
 ﻿using LibraryManagement.Application.Abstractions.Messaging;
 
-namespace LibraryManagement.Application.Book.Queries.GetBooks
+namespace LibraryManagement.Application.Books.Queries.GetBooks
 {
     public class GetBooksQuery : IQuery<IEnumerable<GetBooksResponse>>
     {

@@ -3,7 +3,7 @@ using LibraryManagement.Application.Abstractions.Messaging;
 using LibraryManagement.Domain.Abstractions;
 using LibraryManagement.Domain.Books;
 
-namespace LibraryManagement.Application.Book.Commands.CreateBook
+namespace LibraryManagement.Application.Books.Commands.CreateBook
 {
     public class CreateBookCommandHandler : ICommandHandler<CreateBookCommand, CreateBookResponse>
     {

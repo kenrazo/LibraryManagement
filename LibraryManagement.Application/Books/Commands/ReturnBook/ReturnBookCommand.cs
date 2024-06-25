@@ -1,6 +1,6 @@
 ﻿using LibraryManagement.Application.Abstractions.Messaging;
 
-namespace LibraryManagement.Application.Book.Commands.ReturnBook
+namespace LibraryManagement.Application.Books.Commands.ReturnBook
 {
     public class ReturnBookCommand : ICommand<ReturnBookResponse>
     {

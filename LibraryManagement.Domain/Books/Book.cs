@@ -63,7 +63,7 @@ namespace LibraryManagement.Domain.Books
             List<ValidationError> errors = new()
                 {
                     new ValidationError(string.Empty,
-                        $"The book with Title: {Title} is already barrowed.")
+                        $"The book with Title: {Title} is already borrowed.")
                 };
             throw new BookIsAlreadyBorrowedException(errors);
         }

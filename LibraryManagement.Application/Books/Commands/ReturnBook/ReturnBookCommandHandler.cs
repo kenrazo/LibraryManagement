@@ -3,7 +3,7 @@ using LibraryManagement.Application.Abstractions.Messaging;
 using LibraryManagement.Domain.Abstractions;
 using LibraryManagement.Domain.Books;
 
-namespace LibraryManagement.Application.Book.Commands.ReturnBook
+namespace LibraryManagement.Application.Books.Commands.ReturnBook
 {
     public class ReturnBookCommandHandler : ICommandHandler<ReturnBookCommand, ReturnBookResponse>
     {
@@ -22,7 +22,7 @@ namespace LibraryManagement.Application.Book.Commands.ReturnBook
 
             if (book is null)
             {
-                return (Result.Failure<ReturnBookResponse>(BookErrors.BookNotFound(request.Id)));
+                return Result.Failure<ReturnBookResponse>(BookErrors.BookNotFound(request.Id));
             }
 
             book.ReturnBook();

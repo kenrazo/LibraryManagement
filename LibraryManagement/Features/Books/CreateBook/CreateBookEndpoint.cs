@@ -1,4 +1,4 @@
-﻿using LibraryManagement.Application.Book.Commands.CreateBook;
+﻿using LibraryManagement.Application.Books.Commands.CreateBook;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

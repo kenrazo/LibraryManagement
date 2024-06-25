@@ -3,7 +3,7 @@ using LibraryManagement.Application.Abstractions.Messaging;
 using LibraryManagement.Domain.Abstractions;
 using LibraryManagement.Domain.Books;
 
-namespace LibraryManagement.Application.Book.Queries.GetBooks
+namespace LibraryManagement.Application.Books.Queries.GetBooks
 {
     public class GetBooksQueryHandler : IQueryHandler<GetBooksQuery, IEnumerable<GetBooksResponse>>
     {

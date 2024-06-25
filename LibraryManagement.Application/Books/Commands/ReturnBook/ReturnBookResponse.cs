@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using LibraryManagement.Application.Book.Common;
+using LibraryManagement.Application.Books.Common;
 
-namespace LibraryManagement.Application.Book.Commands.ReturnBook
+namespace LibraryManagement.Application.Books.Commands.ReturnBook
 {
     public class ReturnBookResponse : BookModel
     {

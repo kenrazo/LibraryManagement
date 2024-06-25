@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using LibraryManagement.Application.Book.Common;
+using LibraryManagement.Application.Books.Common;
 
-namespace LibraryManagement.Application.Book.Commands.CreateBook
+namespace LibraryManagement.Application.Books.Commands.CreateBook
 {
     public class CreateBookResponse : BookModel
     {

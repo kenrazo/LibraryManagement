@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using LibraryManagement.Application.Mapping;
-namespace LibraryManagement.Application.Book.Common
+namespace LibraryManagement.Application.Books.Common
 {
     public class BookModel : IMapFrom<Domain.Books.Book>
     {

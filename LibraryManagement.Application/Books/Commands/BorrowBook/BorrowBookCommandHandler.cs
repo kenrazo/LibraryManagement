@@ -3,7 +3,7 @@ using LibraryManagement.Application.Abstractions.Messaging;
 using LibraryManagement.Domain.Abstractions;
 using LibraryManagement.Domain.Books;
 
-namespace LibraryManagement.Application.Book.Commands.BorrowBook
+namespace LibraryManagement.Application.Books.Commands.BorrowBook
 {
     public class BorrowBookCommandHandler : ICommandHandler<BorrowBookCommand, BorrowBookResponse>
     {
@@ -23,7 +23,7 @@ namespace LibraryManagement.Application.Book.Commands.BorrowBook
 
             if (book is null)
             {
-                return (Result.Failure<BorrowBookResponse>(BookErrors.BookNotFound(request.Id)));
+                return Result.Failure<BorrowBookResponse>(BookErrors.BookNotFound(request.Id));
             }
 
             book.BarrowBook();

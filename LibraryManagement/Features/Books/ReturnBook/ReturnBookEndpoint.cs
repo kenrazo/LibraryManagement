@@ -1,4 +1,4 @@
-﻿using LibraryManagement.Application.Book.Commands.ReturnBook;
+﻿using LibraryManagement.Application.Books.Commands.ReturnBook;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

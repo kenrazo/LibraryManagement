@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace LibraryManagement.Application.Book.Commands.BorrowBook
+namespace LibraryManagement.Application.Books.Commands.BorrowBook
 {
     public class BorrowBookCommandValidator : AbstractValidator<BorrowBookCommand>
     {

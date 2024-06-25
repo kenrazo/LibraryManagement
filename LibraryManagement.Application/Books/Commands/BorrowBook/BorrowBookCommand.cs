@@ -1,6 +1,6 @@
 ﻿using LibraryManagement.Application.Abstractions.Messaging;
 
-namespace LibraryManagement.Application.Book.Commands.BorrowBook
+namespace LibraryManagement.Application.Books.Commands.BorrowBook
 {
     public class BorrowBookCommand : ICommand<BorrowBookResponse>
     {

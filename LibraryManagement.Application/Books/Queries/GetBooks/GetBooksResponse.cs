@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using LibraryManagement.Application.Book.Common;
+using LibraryManagement.Application.Books.Common;
 
-namespace LibraryManagement.Application.Book.Queries.GetBooks
+namespace LibraryManagement.Application.Books.Queries.GetBooks
 {
     public class GetBooksResponse : BookModel
     {

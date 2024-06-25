@@ -1,4 +1,4 @@
-﻿using LibraryManagement.Application.Book.Queries.GetBooks;
+﻿using LibraryManagement.Application.Books.Queries.GetBooks;
 using MediatR;
 
 namespace LibraryManagement.API.Features.Books.GetBooks
