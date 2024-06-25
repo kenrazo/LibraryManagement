@@ -13,6 +13,7 @@ Technology
 - MinimalAPI
 - MediatR
 - EFCore
+- Minimal API
 
 Design Pattern
 - Clean Architecture
