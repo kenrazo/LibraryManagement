@@ -9,10 +9,8 @@ namespace LibraryManagement.Application
 {
     public static class ApplicationConfiguration
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
+        public static IServiceCollection AddApplicationConfiguration(this IServiceCollection services)
         {
-            //services.AddAutoMapper(typeof(BookCategoryProfile).GetTypeInfo().Assembly);
-
             services
                 .AddValidatorsFromAssembly(Assembly.GetExecutingAssembly())
                 .AddMediatR(m =>

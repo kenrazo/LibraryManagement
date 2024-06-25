@@ -7,7 +7,7 @@ namespace LibraryManagement.Infrastructure.EFCore
 {
     public static class InfrastructureEFCoreConfiguration
     {
-        public static IServiceCollection AddInfrastructureEFCore(this IServiceCollection services)
+        public static IServiceCollection AddInfrastructureEFCoreConfiguration(this IServiceCollection services)
         {
             return services
                 .AddEFCore()

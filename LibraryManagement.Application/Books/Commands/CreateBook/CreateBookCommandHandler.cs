@@ -19,9 +19,14 @@ namespace LibraryManagement.Application.Books.Commands.CreateBook
         public async Task<Result<CreateBookResponse>> Handle(CreateBookCommand request,
             CancellationToken cancellationToken)
         {
-            var book = Domain.Books.Book.CreateNewBook(request.Title, request.Author, request.ISBN);
+            var book = await _bookRepository.GetByTitleAndAuthor(request.Title, request.Author);
+            if (book is not null)
+            {
+                return Result.Failure<CreateBookResponse>(BookErrors.BookAlreadyExist(request.Title, request.Author));
+            }
 
-            var result = await _bookRepository.InsertAsync(book);
+            var newBook = Domain.Books.Book.CreateNewBook(request.Title, request.Author, request.ISBN);
+            var result = await _bookRepository.InsertAsync(newBook);
 
             return _mapper.Map<CreateBookResponse>(result);
         }

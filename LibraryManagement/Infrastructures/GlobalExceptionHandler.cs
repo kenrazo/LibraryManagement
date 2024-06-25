@@ -54,14 +54,14 @@ namespace LibraryManagement.API.Infrastructures
                     StatusCodes.Status400BadRequest,
                     "ValidationFailure",
                     "Validation Error",
-                    EXCEPTION_DETAIL,
-                    isAlreadyBorrowedException.Errors),
-                BookIsAlreadyReturnedException isAlreadyBorrowedException => new ExceptionDetails(
+                    isAlreadyBorrowedException.Errors.Select(m => m.ErrorMessage).FirstOrDefault() ?? EXCEPTION_DETAIL,
+                    null),
+                BookIsAlreadyReturnedException isAlreadyReturnedException => new ExceptionDetails(
                     StatusCodes.Status400BadRequest,
                     "ValidationFailure",
                     "Validation Error",
-                    EXCEPTION_DETAIL,
-                    isAlreadyBorrowedException.Errors),
+                    isAlreadyReturnedException.Errors.Select(m => m.ErrorMessage).FirstOrDefault() ?? EXCEPTION_DETAIL,
+                    null),
                 _ => new ExceptionDetails(
                     StatusCodes.Status500InternalServerError,
                     "ServerError",

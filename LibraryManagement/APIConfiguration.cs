@@ -2,6 +2,7 @@
 using LibraryManagement.API.Features.Books.CreateBook;
 using LibraryManagement.API.Features.Books.GetBooks;
 using LibraryManagement.API.Features.Books.ReturnBook;
+using LibraryManagement.API.Infrastructures;
 
 namespace LibraryManagement.API
 {
@@ -17,6 +18,13 @@ namespace LibraryManagement.API
             group.MapCreateBookEndpoint();
             group.MapBorrowBookEndpoint();
             group.MapReturnBookEndpoint();
+        }
+
+        public static IServiceCollection AddAPIConfiguration(this IServiceCollection services)
+        {
+            services.AddExceptionHandler<GlobalExceptionHandler>();
+            services.AddProblemDetails();
+            return services;
         }
     }
 }

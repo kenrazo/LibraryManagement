@@ -30,5 +30,11 @@ namespace LibraryManagement.Infrastructure.EFCore.Books
 
             return book;
         }
+
+        public async Task<Book?> GetByTitleAndAuthor(string title, string author)
+            => await _context
+                .Books
+                .FirstOrDefaultAsync(m => m.Title.ToLower() == title.ToLower()
+                                    && m.Author.ToLower() == author.ToLower());
     }
 }

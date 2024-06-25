@@ -15,6 +15,17 @@ namespace LibraryManagement.API.Features.Books.CreateBook
         {
             var result = await mediator.Send(command);
 
+            if (result.IsFailure)
+            {
+                return Results.BadRequest(new ProblemDetails
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Type = result.Error.Code,
+                    Title = result.Error.Code,
+                    Detail = result.Error.Name,
+                });
+            }
+
             return Results.Ok(result);
         }
     }
