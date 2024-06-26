@@ -16,7 +16,7 @@ namespace LibraryManagement.Infrastructure.EFCore
 
         private static IServiceCollection AddEFCore(this IServiceCollection services)
         {
-            return services.AddDbContext<LibraryManagementContext>(options => options.UseInMemoryDatabase(databaseName: "NoteTaking"));
+            return services.AddDbContext<LibraryManagementContext>(options => options.UseInMemoryDatabase(databaseName: "LibraryManagement"));
         }
 
         private static IServiceCollection AddRepositories(this IServiceCollection services)
