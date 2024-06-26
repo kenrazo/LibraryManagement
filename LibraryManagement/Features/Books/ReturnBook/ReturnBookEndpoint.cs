@@ -26,7 +26,7 @@ namespace LibraryManagement.API.Features.Books.ReturnBook
                 });
             }
 
-            return Results.Ok(result);
+            return Results.Ok(result.Value);
         }
     }
 }

@@ -1,18 +1,9 @@
-﻿using AutoMapper;
-using LibraryManagement.Application.Books.Common;
+﻿using LibraryManagement.Application.Books.Queries.Common;
 
 namespace LibraryManagement.Application.Books.Queries.GetBooks
 {
-    public class GetBooksResponse : BookModel
+    public class GetBooksResponse
     {
-        public int Id { get; set; }
-
-        public bool IsBorrowed { get; set; }
-        //public List<BookResponse> Datas { get; set; }
-
-        public override void Mapping(Profile mapper)
-        {
-            mapper.CreateMap<Domain.Books.Book, GetBooksResponse>();
-        }
+        public List<BookResponse> Datas { get; set; }
     }
 }

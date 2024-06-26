@@ -26,7 +26,7 @@ namespace LibraryManagement.API.Features.Books.CreateBook
                 });
             }
 
-            return Results.Ok(result);
+            return Results.Ok(result.Value);
         }
     }
 }

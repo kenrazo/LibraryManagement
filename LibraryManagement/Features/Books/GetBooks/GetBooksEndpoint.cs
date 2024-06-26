@@ -13,7 +13,7 @@ namespace LibraryManagement.API.Features.Books.GetBooks
         {
             var result = await mediator.Send(new GetBooksQuery());
 
-            return Results.Ok(result);
+            return Results.Ok(result.Value);
         }
 
     }

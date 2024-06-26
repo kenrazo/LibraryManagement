@@ -2,7 +2,7 @@
 
 namespace LibraryManagement.Application.Books.Queries.GetBooks
 {
-    public class GetBooksQuery : IQuery<IEnumerable<GetBooksResponse>>
+    public class GetBooksQuery : IQuery<GetBooksResponse>
     {
     }
 }
